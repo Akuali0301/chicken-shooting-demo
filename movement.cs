@@ -10,7 +10,7 @@ public class movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        this.worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        this.worldPosition = InputManager.Instance.MouseWorldPos;
         this.worldPosition.z = 0;
 
         Vector3 newPos = Vector3.Lerp(transform.parent.position, worldPosition, this.speed);
